@@ -1,0 +1,25 @@
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  getimagesize(/Images/1427209291.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 3
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  Division by zero in /home/bitunvrh/public_html/include/imgResizer.php on line 4
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagecreatefromjpeg(/Images/1427209291.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 17
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/bitunvrh/public_html/include/imgResizer.php on line 19
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 20
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagejpeg() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 21
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  getimagesize(/Images/1-1427209291.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 3
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  Division by zero in /home/bitunvrh/public_html/include/imgResizer.php on line 4
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagecreatefromjpeg(/Images/1-1427209291.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 17
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/bitunvrh/public_html/include/imgResizer.php on line 19
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 20
+[24-Mar-2015 15:08:06 Etc/GMT] PHP Warning:  imagejpeg() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 21
+[24-Mar-2015 15:12:52 Etc/GMT] PHP Parse error:  syntax error, unexpected 'jpg' (T_STRING) in /home/bitunvrh/public_html/include/imgResizer.php on line 26
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  getimagesize(../Images//Images/1427209291.jpg.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 3
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  Division by zero in /home/bitunvrh/public_html/include/imgResizer.php on line 4
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagecreatefromjpeg(../Images//Images/1427209291.jpg.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 17
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/bitunvrh/public_html/include/imgResizer.php on line 19
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 20
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagejpeg() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 21
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  getimagesize(../Images//Images/1-1427209291.jpg.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 3
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  Division by zero in /home/bitunvrh/public_html/include/imgResizer.php on line 4
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagecreatefromjpeg(../Images//Images/1-1427209291.jpg.jpg): failed to open stream: No such file or directory in /home/bitunvrh/public_html/include/imgResizer.php on line 17
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagecreatetruecolor(): Invalid image dimensions in /home/bitunvrh/public_html/include/imgResizer.php on line 19
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 20
+[24-Mar-2015 15:14:03 Etc/GMT] PHP Warning:  imagejpeg() expects parameter 1 to be resource, boolean given in /home/bitunvrh/public_html/include/imgResizer.php on line 21

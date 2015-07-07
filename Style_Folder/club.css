@@ -1,0 +1,57 @@
+/*
+/* 
+    Created on : 21 Mar, 2015, 6:31:26 PM
+*/
+
+@media (max-width:700px){
+	.imgHolder{/*Styling for div containg text and image*/
+	    width:90%;
+	    margin:15px auto 15px auto;
+	}
+
+}
+@media (min-width:701px){
+	.imgHolder{/*Styling for div containg text and image*/
+	    width:28%;
+	    margin:70px 0 70px 3.5%;
+	    display:inline-block;
+	}
+
+}
+
+.imgHolder{/*Styling for div containg text and image*/
+    position:relative;
+}
+.imgHolder img{
+    height:220px;
+    width:100%;
+    z-index: 0;
+}
+.imgHolder a,.imgHolder a:visited{
+    color:#000;
+}
+.coverText{/*Styling for text displayed over image*/
+    z-index: 1;
+    bottom:3px;
+    padding:7px 3px;
+    text-align: center;
+    width:98%;
+    position:absolute;
+    background:#FFF;
+    text-decoration:underline;
+    opacity: 0.9;
+    -moz-opacity: 0.90;
+    filter: alpha(opacity=90);
+    color:#000;
+}
+.coverText:hover,.imgHolder:hover .coverText{
+    -moz-opacity: 0.80;
+    opacity:0.8;
+    filter: alpha(opacity=80);
+    text-decoration: none;
+}
+#clubLogo{
+    display:block;
+    margin: 10px auto 20px auto;
+    max-width: 90%;
+}

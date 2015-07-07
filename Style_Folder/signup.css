@@ -1,0 +1,111 @@
+@media (max-width: 700px){
+	#rbox-holder h2{/*Title of the page */
+		font-size:1.5em;
+	}
+	#rForm label{
+		width:95%;
+	}
+	.r-input{
+		width:85%;
+	}
+}
+@media (min-width:701px){
+	#rbox-holder h2{/*Title of the page */
+		font-size:2em;
+	}
+	#rForm label{
+		width:20%;
+	}
+	.r-input{
+		width:40%;
+	}
+}
+
+#signup{
+    background:#242424;
+    margin:1% auto 0 auto;
+    width:95%;
+    color:#ffffff;
+    padding:10px;
+    border-radius:5px;
+}
+#rbox-holder{
+	margin:80px auto 80px auto;
+	overflow:auto;
+	text-align:center;	
+	border:1px solid #aaa;
+	border-bottom:2px solid #aaa;
+	width:90%;
+        background:#1C1C1C;
+}
+
+#rbox-holder h2{/*Title of the page */
+	background:#0F1A22;
+	color:#fff;
+	text-align:right;
+	padding:10px;
+	border-bottom:2px solid #0000FF;
+	border-top:1px solid #aaa;
+	font-weight:400;
+}
+
+#reg-error-msg{
+	margin:10px auto 30px auto;
+	border:1px solid #F00;
+	width:80%;
+	padding:10px 0;
+	background:#FFF4DA;
+        color:#000;
+        font-size:17px;
+}
+
+#rForm{
+	padding:30px 0;
+	margin:0 auto;
+}
+
+#rForm label{
+	display:inline-block;
+	margin:10px 0 10px 0;
+	text-align:right;
+}
+.r-input{
+	display:inline-block;
+	margin-left:20px;
+	border:1px solid #aaa;
+	border-radius:4px;
+	padding:5px 3px;
+	font-size:0.8em;
+}
+.regError{
+	display:inline-block;
+	font-size:0.75em;
+	color:#DD1111;
+	width:45%;
+	visibility:hidden;
+}
+#rSubmit{
+	background:#2E516A;
+	margin-top:40px;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+	width:25%;
+	max-width:250px;
+	padding:15px 0;
+	border:0;
+	font-size:1em;
+}
+#rSubmit:hover{
+	background:#0F1A22;
+}
+#rbox-holder a,#rbox-holder a:visited{
+	text-decoration:none;
+	display:block;
+	clear:both;
+	margin:20px 0 5px 0;
+	color:#FFF;
+}
+#rbox-holder a:hover{
+	text-decoration:underline;
+}

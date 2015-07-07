@@ -1,0 +1,75 @@
+#recoverFormHolder{
+	margin:80px auto 80px auto;
+	overflow:auto;
+	text-align:center;	
+	border:1px solid #aaa;
+	border-bottom:2px solid #aaa;
+	width:60%;
+        color:#FFF;
+        background:#242424;
+}
+#recoverFormHolder h2{/*Title of the page */
+	background:#0F1A22;
+	color:#fff;
+	font-size:2em;
+	text-align:right;
+	padding:10px;
+	border-bottom:2px solid #0000FF;
+	border-top:1px solid #aaa;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-weight:400;
+}
+#recoverForm{
+	padding:30px 0;
+	width:80%;
+	margin:0 auto;
+}
+#recoverForm label{
+        display:inline-block;
+	width:45%;
+}
+#email{
+        display:inline-block;
+	width:48%;
+	border:1px solid #aaa;
+	border-radius:4px;
+	padding:5px 7px;
+	font-size:0.8em;
+}
+#recoverForm p{
+    margin:20px auto;
+    text-align: left;
+    border:2px solid #D2FFD9;
+    padding:20px;
+}
+#recoverSubmit{
+	background:#2E516A;
+	margin:20px auto 0 auto;
+	color:#fff;
+	font-weight:bold;
+        display:block;
+	cursor:pointer;
+	padding:7px 10px;
+	border:0;
+	font-size:1em;
+}
+#recoverSubmit:hover{
+	background:#0F1A22;
+}
+.rec-msg{
+    clear:both;
+    width:80%;
+    text-align: center;
+    color:#000;
+}
+#er{
+    background:#FFE2E2;
+    padding:10px;
+    margin:100px auto;
+}
+#suc{
+    background:#D2FFD9;
+    margin:100px auto;
+    padding:30px 10px;
+}
+

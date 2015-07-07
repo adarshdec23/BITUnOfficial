@@ -1,0 +1,111 @@
+@media (max-width: 700px){
+	#lbox-holder{
+		width:95%;
+	}
+	#lbox-holder h2{/*Title of the page */
+		font-size:1.5em;
+	}
+	#lForm{
+		width:95%;
+	}
+	.l-input{
+		width:85%;
+	}
+}
+@media (min-width:701px){
+	#lbox-holder{
+		width:65%;
+	}
+	#lbox-holder h2{/*Title of the page */
+		font-size:2em;
+	}
+	#lForm{
+		width:80%;
+	}
+	.l-input{
+		width:55%;
+	}
+}
+
+#login{
+    background:#242424;
+    margin:1% auto 0 auto;
+    width:95%;
+    color:#ffffff;
+    padding:10px;
+    border-radius:5px;
+}
+#lbox-holder{
+	margin:80px auto 80px auto;
+	overflow:auto;
+	text-align:center;	
+	border:1px solid #aaa;
+	border-bottom:2px solid #aaa;
+        background:#1C1C1C;
+}
+
+#lbox-holder h2{/*Title of the page */
+	background:#0F1A22;
+	color:#fff;
+	text-align:right;
+	padding:10px;
+	border-bottom:2px solid #0000FF;
+	border-top:1px solid #aaa;
+	font-weight:400;
+}
+
+#login-page-error-msg{
+	margin:30px auto 0 auto;
+	border:1px solid #F00;
+	width:85%;
+	padding:20px;
+	font-size:17px;
+	text-align:center;
+	background:#FFF4DA;
+        color:#000;
+}
+
+#lForm{
+	padding:30px 0;
+	margin:0 auto;
+}
+
+#lForm label{
+	display:inline-block;
+	width:35%;
+	margin:10px 0 10px 0;
+	text-align:right;
+}
+.l-input{
+	display:inline-block;
+	margin-left:20px;
+	border:1px solid #aaa;
+	border-radius:4px;
+	padding:5px 3px;
+	font-size:0.8em;
+}
+
+#lSubmit{
+	background:#2E516A;
+	margin-top:20px;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+	width:40%;
+	padding:7px 0;
+	border:0;
+	font-size:1em;
+}
+#lSubmit:hover{
+	background:#0F1A22;
+}
+#lbox-holder a,#lbox-holder a:visited{
+	text-decoration:none;
+	display:block;
+	clear:both;
+	margin:20px 0 5px 0;
+	color:#FFF;
+}
+#lbox-holder a:hover{
+	text-decoration:underline;
+}

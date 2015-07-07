@@ -1,0 +1,124 @@
+.editP-msg{
+    clear:both;
+    width:96%;
+    margin:20px auto 0 auto;
+    padding:10px;
+    text-align: center;
+    color:#000;
+}
+#er{
+    background:#FFE2E2;
+}
+#suc{
+    background:#D2FFD9;
+}
+#pictureEditHolder{
+    float:left;
+    width:28%;
+    margin:20px 0 20px 1%;
+    overflow:auto;
+    padding:5px;
+    background: #0F1A22;
+}
+#pictureEditHolder svg,#pictureEditHolder img{
+    width:94%;
+    height:400px;
+    display:block;
+    background:#FFF;
+    margin:10px auto;
+}
+#profilePicEditor{
+    width:94%;
+    margin:40px auto;
+}
+#picInput{
+    margin:0 auto;
+    display:block;
+    background:#EEE7EA;
+    padding:5px;
+    text-align:center;
+}
+#profileEditorHolder{
+    background: #0F1A22;
+    width:65%;
+    margin:20px 1% 20px 0;
+    padding:10px;
+    float:right;
+    overflow: auto;
+    color:#fff;
+}
+#profileEditorHolder h2{
+    border-bottom:1px solid #aaa;
+    text-align: right;
+    padding:20px 10px;
+}
+#profileEditorHolder label{
+    width:25%;
+    display: inline-block;
+    margin: 30px 0;    
+}
+textarea{
+    min-height: 150px;
+    min-width: 450px;
+    overflow: auto;
+}
+.editP-input{
+    width:30%;
+    display: inline-block;
+    border:1px solid #aaa;
+    padding:5px;
+    font-size:1em;
+    background:#DBDDDE;
+    vertical-align: middle;
+}
+.editP-input:focus{
+    background:#fff;
+}
+.editPError{
+    width:38%;
+    display:inline-block;
+    font-size: 0.8em;
+    color:#F00;
+    text-align: right;
+    visibility: hidden;
+}
+.editPSubmit{
+    border:0;
+    padding:13px 20px;
+    color:#fff;
+    background:#2E516A;
+    font-weight:bold;
+    display:block;
+    margin:30px auto 10px auto;
+    cursor: pointer;
+}
+.editPSubmit:hover{
+    background: #27343D;
+}
+#aboveForm{
+    background:#EEE7EA;
+    color:#000;
+    margin:100px 0 0;
+    padding:5px;
+    cursor: pointer;
+}
+#aboveForm img{
+    float:left;
+    height:25px;
+    width:25px;
+    margin:-2px 10px 0 0;
+}
+#passwordEditForm{
+    width:95%;
+    padding:5px 10px;
+    margin:0 auto;
+    border-right:1px solid #aaa;
+    border-left:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+    display:none;
+}
+#passwordEditForm label{
+    width:29%;
+    display: inline-block;
+    margin: 30px 0;    
+}

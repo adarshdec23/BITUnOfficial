@@ -1,0 +1,10 @@
+Options -Multiviews -Indexes
+RewriteEngine on
+RewriteRule ^club/(.*) /club.php?link=$1 [NC,L,QSA]
+RewriteRule ^club$ /club.php [NC,L]
+RewriteRule ^img/([0-9]+)/?(.*)/? /img.php?iid=$1 [NC,L,QSA]
+RewriteRule ^img/?$ /img.php [NC,L,QSA]
+RewriteRule ^art/([0-9]+)/?(.*)/? /art.php?id=$1 [NC,L,QSA]
+RewriteRule ^art/?$ /art.php [NC,L,QSA]
+RewriteRule ^manthan/?$ /Manthan/index.php [NC,L,R]
+RewriteRule ^chat$ /chat.php [NC,L]

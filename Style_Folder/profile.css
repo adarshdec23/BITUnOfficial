@@ -1,0 +1,80 @@
+@media (max-width:700px){
+	#profileHolder{
+		width:95%;
+	}
+	#profileHolder svg,#profileHolder img{
+		max-width:95%;
+	}
+	.profileLeftList{
+		margin:10px 0 10px 3%;
+		vertical-align: center;
+	}
+	#profileHolder{
+		padding:5px 0.5%;
+	}
+	#profileHolder ul{
+		padding-left:0;
+	}
+}
+
+@media (min-width:701px){
+	#profileHolder{
+		width:80%;
+	}
+	#profileHolder svg,#profileHolder img{
+		max-width:65%;
+	}
+	.profileLeftList{
+		margin:10px 0 10px 8.5%;
+		vertical-align: top;
+	}
+	#profileHolder{
+		padding:5px 2%;
+	}
+}
+
+#profileHolder{
+	background:#0F1A22;
+	margin:30px auto 20px auto;
+	color:#fff;
+	border-radius:5px;
+}
+#profileHolder h2{
+	padding:20px;
+	border-bottom:1px solid #aaa;
+}
+#profileHolder svg,#profileHolder img{
+	max-height:500px;
+	margin:20px auto;
+	display:block;
+	background:#FFF;
+}
+#profileHolder ul{
+	list-style:none;
+	margin-top:40px;
+}
+#profileHolder li{
+	display:inline-block;
+	background:#27343D;
+	padding:25px 10px;
+	border-bottom:1px solid #aaa;
+}
+.profileRightList{
+	margin:10px 0 10px 1.5%;
+	width:45%;
+	word-wrap: break-word;
+}
+.profileLeftList{
+        width:35%;
+}
+#profileHolder a,#profileHolder a:visited{
+	color:#fff;
+}
+#profileHolder a:hover{
+	text-decoration:underline;
+}
+#linkToEdit{
+	margin:40px auto;
+	display:block;
+	text-align:center;
+}

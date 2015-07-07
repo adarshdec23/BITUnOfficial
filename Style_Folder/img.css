@@ -1,0 +1,170 @@
+/* 
+    Document   : img
+    Created on : 05-Jun-2014, 23:59:50
+    Author     : Adarsh
+    Description:Styling for img/gallery of BITUnofficial
+*/
+
+@media (max-width:700px){
+	.imgHolder{/*Styling for div containg text and image*/
+	    width:90%;
+	    margin:15px auto 15px auto;
+	}
+	.icon{
+		width:15%;
+	}
+	/*youtube iframe styling*/
+	iframe{
+	    margin:2% auto 1% auto;
+	    width:95%;
+	}
+}
+@media (min-width:701px){
+	.imgHolder{/*Styling for div containg text and image*/
+	    width:28%;
+	    margin:70px 0 70px 3.5%;
+	    display:inline-block;
+	}
+	.icon{
+		width:6%;
+	}
+	/*youtube iframe styling*/
+	iframe{
+	    margin:2% auto 1% 6%;
+	    height:300px;
+	    width:350px;
+	}
+}
+
+#galleryTab{/*Styling for tabs*/
+    margin:20px auto 0 auto;
+    list-style: none;
+    padding-left:0;
+    width:95%;
+    overflow: auto;
+}
+#galleryTab li{
+    display:inline-block;
+    color:#FFF;
+    font-weight: bold;
+    padding:10px 40px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.greyBackground{
+    background:#474747;
+}
+
+#galleryHolder{/*Styling for overall holder*/
+    margin:0 auto 0 auto;
+    background:#474747;
+    padding-bottom: 20px;
+    overflow: auto;
+    width:98%;
+    position:relative;
+}
+.imgHeading{
+    width:95%;
+    margin: 50px auto 0 auto;
+    color:#FFF;
+    padding:15px;
+    font-size:1.3em;
+    font-weight: bold;
+    background:#000;
+    opacity: 0.8;
+    -moz-opacity: 0.80;
+    filter: alpha(opacity=80);
+    overflow:auto;
+}
+.imgHolder{/*Styling for div containg text and image*/
+    position:relative;
+}
+.imgHolder img{
+    height:220px;
+    width:100%;
+    z-index: 0;
+}
+.imgHolder a,.imgHolder a:visited{
+    color:#000;
+}
+.coverText{/*Styling for text displayed over image*/
+    z-index: 1;
+    bottom:3px;
+    padding:7px 3px;
+    text-align: center;
+    width:98%;
+    position:absolute;
+    background:#FFF;
+    text-decoration:underline;
+    opacity: 0.7;
+    -moz-opacity: 0.70;
+    filter: alpha(opacity=70);
+}
+.coverText:hover,.imgHolder:hover .coverText{
+    -moz-opacity: 0.80;
+    opacity:0.8;
+    filter: alpha(opacity=80);
+    text-decoration: none;
+}
+.imgHR{/*Styling for HR*/
+    height:1px;
+    margin:0 auto 0 auto;
+    width:95%;
+    background:#aaa;
+}
+
+
+/* End of iframe styling */
+
+/*Styling for slide shows*/
+#ss
+{	width:97%;
+        margin:70px auto 0 auto;
+	overflow:auto;
+	position:relative;
+}
+#iss img
+{	
+	display:block;
+	margin:0 auto;
+	z-index:0;
+        background:#000;
+        max-width:100%;
+}	
+.icon{
+        position:absolute;
+	top:40%;
+	overflow:auto;
+	z-index:1;
+	background:#000;
+	opacity:0.6;
+	cursor:pointer;	
+}	
+
+.icon:hover
+{
+	opacity:1;
+}	
+
+#li img,#ri img{
+	margin:0;
+	width:100%;
+}	
+#li{
+	left:0;
+	border-bottom-right-radius:10px;
+	border-top-right-radius:10px;
+}
+#ri{
+        right:0;
+	border-bottom-left-radius:10px;
+	border-top-left-radius:10px;
+}
+#textBelow{
+    color:#FFF;
+    margin:30px auto 0 auto;
+    font-size:1.1em;
+    text-align:center;
+    margin-bottom: 30px;
+}
+/*End of styling for slide show*/

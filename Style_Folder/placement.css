@@ -1,0 +1,37 @@
+/* ---- Styling for placement page */
+
+#placement table
+{
+	width:80%;
+	text-align:center;
+	background:#393939;
+	vertical-align:center;
+	margin: 5% auto 5% auto;
+	font:1.1em arial;
+	border-collapse:collapse;
+}
+
+#placement td
+{
+	padding:2% 5%;
+	border:1px solid #ffffff;
+	
+}
+
+#placement th 
+{
+	padding:4% 4% 4% 2%;
+	border:1px solid #ffffff;
+}	
+#placement ul
+{
+	list-style-type:decimal;
+	margin:2% 0 3% 7%;
+}
+
+.placedark
+{
+	background:#303030;
+}	
+
+/* ---- End of styling for placement page */

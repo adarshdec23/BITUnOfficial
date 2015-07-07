@@ -1,0 +1,19 @@
+[18-Mar-2015 16:01:29 Etc/GMT] PHP Fatal error:  Call to undefined function sendEmail() in /home/bitunvrh/public_html/loginSys/test.php on line 5
+[18-Mar-2015 22:03:58 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/bitunvrh/public_html/loginSys/signup.php on line 74
+[18-Mar-2015 22:05:44 Asia/Kolkata] PHP Warning:  mysqli_query(): Empty query in /home/bitunvrh/public_html/loginSys/signup.php on line 74
+[18-Mar-2015 16:45:10 Etc/GMT] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/bitunvrh/public_html/loginSys/verifyAccount.php on line 16
+[18-Mar-2015 16:45:42 Etc/GMT] PHP Warning:  mysqli_query() expects at least 2 parameters, 1 given in /home/bitunvrh/public_html/loginSys/verifyAccount.php on line 16
+[18-Mar-2015 16:45:42 Etc/GMT] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bitunvrh/public_html/loginSys/verifyAccount.php:16) in /home/bitunvrh/public_html/loginSys/verifyAccount.php on line 22
+[18-Mar-2015 22:31:33 Asia/Kolkata] PHP Warning:  include(/home/bitunvrh/public_html/bitun/author/include/aCon.php): failed to open stream: No such file or directory in /home/bitunvrh/public_html/author/classes/authorClass.php on line 16
+[18-Mar-2015 22:31:33 Asia/Kolkata] PHP Warning:  include(): Failed opening '/home/bitunvrh/public_html/bitun/author/include/aCon.php' for inclusion (include_path='.:/usr/local/altphp54/lib/php') in /home/bitunvrh/public_html/author/classes/authorClass.php on line 16
+[18-Mar-2015 22:31:33 Asia/Kolkata] PHP Fatal error:  Call to a member function query() on a non-object in /home/bitunvrh/public_html/author/classes/authorClass.php on line 31
+[18-Mar-2015 22:33:05 Asia/Kolkata] PHP Warning:  session_regenerate_id(): Cannot regenerate session id - headers already sent in /home/bitunvrh/public_html/loginSys/login.php on line 58
+[18-Mar-2015 22:33:05 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bitunvrh/public_html/author/include/aCon.php:5) in /home/bitunvrh/public_html/loginSys/login.php on line 60
+[18-Mar-2015 22:35:55 Asia/Kolkata] PHP Warning:  session_regenerate_id(): Cannot regenerate session id - headers already sent in /home/bitunvrh/public_html/loginSys/login.php on line 58
+[18-Mar-2015 22:35:55 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bitunvrh/public_html/author/include/aCon.php:5) in /home/bitunvrh/public_html/loginSys/login.php on line 60
+[18-Mar-2015 22:39:26 Asia/Kolkata] PHP Warning:  session_regenerate_id(): Cannot regenerate session id - headers already sent in /home/bitunvrh/public_html/loginSys/login.php on line 58
+[18-Mar-2015 22:39:26 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bitunvrh/public_html/author/include/aCon.php:5) in /home/bitunvrh/public_html/loginSys/login.php on line 60
+[18-Mar-2015 22:39:41 Asia/Kolkata] PHP Warning:  session_regenerate_id(): Cannot regenerate session id - headers already sent in /home/bitunvrh/public_html/loginSys/login.php on line 58
+[18-Mar-2015 22:39:41 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bitunvrh/public_html/author/include/aCon.php:5) in /home/bitunvrh/public_html/loginSys/login.php on line 60
+[18-Mar-2015 22:43:04 Asia/Kolkata] PHP Warning:  session_regenerate_id(): Cannot regenerate session id - headers already sent in /home/bitunvrh/public_html/loginSys/login.php on line 58
+[18-Mar-2015 22:43:04 Asia/Kolkata] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/bitunvrh/public_html/author/include/aCon.php:5) in /home/bitunvrh/public_html/loginSys/login.php on line 60

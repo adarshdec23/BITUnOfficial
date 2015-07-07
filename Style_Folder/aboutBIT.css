@@ -1,0 +1,32 @@
+/*---- Styling for about BIT page ----*/
+#content table
+{
+	width:96%;
+	text-align:center;
+	background:#393939;
+	vertical-align:center;
+	margin: 5% 0 5% 1%;
+	font:1em arial;
+}	
+
+#content td,th
+{
+	padding:4% 4% 4% 2%;
+	border-top:1px dashed #ffffff;
+	
+}
+#content table ul
+{
+	
+	text-align:justify;
+	margin-left:14%;
+}	
+#content table img
+{
+	width:25%;
+}	
+iframe{
+		width:80%;
+	}
+
+/* ---- End of styling for aboutBIT page */

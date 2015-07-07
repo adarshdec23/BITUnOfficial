@@ -1,0 +1,147 @@
+@media (max-width:700px){
+	#pictureEditHolder{
+	    width:95%;
+	}
+	#profileEditorHolder{
+	    width:95%;
+	}
+	.editP-input{
+	    width:60%;
+	    display:block;
+	    margin:0 auto;
+	}
+	#passwordEditForm label{
+	    width:80%;
+	    margin: 30px auto;
+	    text-align:center; 
+	    display: block;  
+	}
+}
+
+@media (min-width:701px){
+	#pictureEditHolder{
+	    float:left;
+	    width:28%;
+	}
+	#profileEditorHolder{
+	    width:65%;
+	    float:right;
+	}
+	.editP-input{
+	    width:30%;
+	    display: inline-block;
+	}
+	#passwordEditForm label{
+	    width:29%;    
+	}
+	#passwordEditForm label{
+	    margin: 30px 0;   
+	    display: inline-block;
+	}
+}
+.editP-msg{
+    clear:both;
+    width:96%;
+    margin:20px auto 0 auto;
+    padding:10px;
+    text-align: center;
+    color:#000;
+}
+#er{
+    background:#FFE2E2;
+}
+#suc{
+    background:#D2FFD9;
+}
+#pictureEditHolder{
+    margin:20px 0 20px 1%;
+    overflow:auto;
+    padding:5px;
+    background: #0F1A22;
+}
+#pictureEditHolder svg,#pictureEditHolder img{
+    max-width:94%;
+    max-height:400px;
+    display:block;
+    background:#FFF;
+    margin:10px auto;
+}
+#profilePicEditor{
+    width:94%;
+    margin:40px auto;
+}
+#picInput{
+    margin:0 auto;
+    display:block;
+    background:#EEE7EA;
+    padding:5px;
+    text-align:center;
+}
+#profileEditorHolder{
+    background: #0F1A22;
+    margin:20px 1% 20px 0;
+    padding:10px;
+    overflow: auto;
+    color:#fff;
+}
+#profileEditorHolder h2{
+    border-bottom:1px solid #aaa;
+    text-align: right;
+    padding:20px 10px;
+}
+.editP-input{
+    
+    border:1px solid #aaa;
+    padding:5px;
+    font-size:0.8em;
+    background:#DBDDDE;
+}
+.editP-input:focus{
+    background:#fff;
+}
+.editPError{
+    width:38%;
+    display:inline-block;
+    font-size: 0.8em;
+    color:#F00;
+    text-align: right;
+    visibility: hidden;
+}
+.editPSubmit{
+    border:0;
+    padding:13px 20px;
+    color:#fff;
+    background:#2E516A;
+    font-weight:bold;
+    display:block;
+    margin:30px auto 10px auto;
+    cursor: pointer;
+}
+.editPSubmit:hover{
+    background: #27343D;
+}
+#aboveForm{
+    background:#EEE7EA;
+    color:#000;
+    margin:100px 0 0;
+    padding:5px;
+    cursor: pointer;
+}
+#aboveForm img{
+    float:left;
+    height:25px;
+    width:25px;
+    margin:-2px 10px 0 0;
+}
+#passwordEditForm{
+    width:95%;
+    padding:5px 10px;
+    margin:0 auto;
+    border-right:1px solid #aaa;
+    border-left:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+    display:none;
+}
+#passwordEditForm label{
+     
+}

@@ -1,0 +1,141 @@
+/* 
+    Document   : art
+    Created on : 11-Jul-2014, 00:14:38
+    Description:
+        Stying for individual articles, contains styling for comment section
+*/
+/*Styling for slide shows*/
+@media (max-width:700px){
+	.icon{
+		width:15%;
+	}
+}
+@media (min-width:701px){
+	.icon{
+		width:6%;
+	}
+}
+.ss
+{
+	width:97%;
+        margin:20px auto;
+	position:relative;
+}	
+.ss a img
+{
+	display:block;
+	margin:0 auto;
+	z-index:0;
+	max-width:100%;
+}	
+.icon
+{
+	position:absolute;
+	top:40%;
+	overflow:auto;
+	z-index:1;
+	background:#000;
+	opacity:0.6;
+	cursor:pointer;	
+}	
+
+.icon:hover
+{
+	opacity:1;
+}	
+
+.li img,.ri img
+{
+	margin:0;
+	width:100%;
+}	
+.li
+{
+	left:0%;
+	border-bottom-right-radius:10px;
+	border-top-right-radius:10px;
+}
+.ri
+{
+	left:92.1%;
+	border-bottom-left-radius:10px;
+	border-top-left-radius:10px;
+}	
+/*Styling for comments*/
+#commentHolder{
+    width:98%;
+    padding:10px 0;
+    margin:30px auto 0 auto;
+    background:#3D3D3D;
+}
+#commentHeading{
+    font-size:20px;
+    color:#aaa;
+    padding-left:20px;
+}
+.comment{
+    background: #5B5B5B;
+    font-size: 14px;
+    margin:25px auto 0 auto;
+    width:98%;
+}
+.comment .cTop{
+    padding:5px 5px 5px 15px;
+    border-bottom: 1px solid #aaa;
+}
+.commentName{
+    font-size: 16px;
+}
+.comment .cProfilePic{
+    width:20%;
+}
+.comment .cComment{
+    width:70%;
+    padding:10px;
+    vertical-align: top;
+    border-left:1px solid #aaa;
+}
+.cProfilePic img,.cProfilePic svg{
+    width:110px;
+    height:110px;
+    margin:5px auto;
+    display:block;
+}
+#askLogin{
+    display: block;
+    margin-top:10px;
+    padding:5px 5px 5px 15px;
+}
+#commentForm{
+    width:90%;
+    margin:20px auto 10px auto;
+}
+#submitedContent{
+    padding:0;
+    width:90%;
+    height: 75px;
+    margin:0 auto;
+    display:block;
+    background:#aaa;
+    resize: vertical;
+}
+#submitedContent:focus{
+    background: #FFF;
+}
+#subButton{
+    margin:0 auto;
+    border:0;
+    background:#D7CFCF;
+    padding:5px 10px;
+    display: block;
+}
+#erm{
+    background: #FFB4B4;
+    color:#000;
+    padding: 5px 10px;
+    margin:10px auto 0 auto;
+    width: 80%;
+    text-align: center;
+    border: 1px solid #F00;
+    display:none;
+}
