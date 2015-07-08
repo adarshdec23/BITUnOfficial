@@ -42,9 +42,9 @@ class vtuleach{
 		$this->handle = fopen('res_error_log.txt', 'a');
 		if(!$this->handle)
 			die("Could not open error log. USN = $this->usn");
-		$this->st_stu = $this->con->prepare("INSERT INTO student (s_name,s_coll,s_year, s_sem,s_branch, s_roll, s_res, s_total) VALUES(?,?,?,?,?,?,?)")or die($this->con->error);
-		$this->st_sub = $this->con->prepare("INSERT INTO subject (sub_year, sub_branch, sub_code, sub_name ) VALUES(?,?,?,?) ON DUPLICATE KEY UPDATE sub_id = LAST_INSERT_ID(sub_id)")or die($this->con->error);
-		$this->st_res = $this->con->prepare("INSERT INTO result (s_id, sub_id, internals,externals, tot, pass_fail) VALUES(?,?,?,?,?,?)")or die($this->con->error);
+		$this->st_stu = $this->con->prepare("INSERT INTO student (s_name,s_coll,s_year, s_sem,s_branch, s_roll, s_res, s_total) VALUES(?,?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE s_id = LAST_INSERT_ID(s_id)")or die($this->con->error."1");
+		$this->st_sub = $this->con->prepare("INSERT INTO subject (sub_year, sub_branch, sub_code, sub_name ) VALUES(?,?,?,?) ON DUPLICATE KEY UPDATE sub_id = LAST_INSERT_ID(sub_id)")or die($this->con->error."2");
+		$this->st_res = $this->con->prepare("INSERT INTO result (s_id, sub_id, internals,externals, tot, pass_fail) VALUES(?,?,?,?,?,?) ON DUPLICATE KEY UPDATE s_id = VALUES(s_id)")or die($this->con->error."3");
     }
     
 	function write_error_log(){
@@ -67,8 +67,10 @@ class vtuleach{
         }
     }
 	
-	function extractBasicDetails($strResult,$table1){	
-		preg_match("/b>(.*)\(.*>(.)<.*Result:(.*?)<\/b>/", $strResult, $matches);
+	function extractBasicDetails($res){
+		
+		$strResult = $res->C14N();
+		preg_match("/b>(.*?)\(.*?>(.)<.*?Result:(.*?)<\/b>/", $strResult, $matches);
 		$stuDetails['name'] = $matches[1];
 		$stuDetails['semester'] = $matches[2];
 		$stuDetails['result'] = str_replace(chr(194),"",$matches[3]);
@@ -78,33 +80,55 @@ class vtuleach{
 		$stuDetails["branch"] = $matches[3];
 		$stuDetails["roll"] = $matches[4];
 		
-		preg_match("/(\d+)/", $table1->nodeValue, $matchesR);
-		$stuDetails["total"] = $matchesR[1];
 		return $stuDetails;
 	}
 	
-	function extractSubjects($tableWithSubjects) {
+	function extractSubjects($td250s) {
 		
-		$tableWithSubjects->removeChild($tableWithSubjects->firstChild);
 		$subjectCount = 0;
-		foreach($tableWithSubjects->childNodes as $childTR)
+		foreach($td250s as $childtd)
 		{
-			if($childTR->nodeName == "tr"){
-				$tdList = $childTR->childNodes;
-				preg_match("/(.*?)\((.*)\)/", $tdList->item(0)->nodeValue, $matches); //Split subject name and code
+				if($childtd->nodeValue == "Subject") //This is the table headind which read "Subject Internals Ex.... Skip this row"
+					continue;
+				preg_match("/(.*?)\((.*)\)/", $childtd->nodeValue, $matches); //Split subject name and code
 				$subject[$subjectCount]["subjectName"] = $matches[1];
 				$subject[$subjectCount]["subjectCode"] = $matches[2];
-				$subject[$subjectCount]["externals"] = ($tdList->item(1)->nodeValue == 'A' ?0:$tdList->item(1)->nodeValue);
-				$subject[$subjectCount]["internals"] = ($tdList->item(2)->nodeValue == 'A' ?0:$tdList->item(2)->nodeValue);
-				$subject[$subjectCount]["total"] = ($tdList->item(3)->nodeValue == 'A' ?0:$tdList->item(3)->nodeValue);
-				$subject[$subjectCount]["result"] = $tdList->item(4)->nodeValue;
+				$childtd = $childtd->nextSibling;
+				$subject[$subjectCount]["externals"] = ($childtd->nodeValue == 'A' ? 0:$childtd->nodeValue);
+				$childtd = $childtd->nextSibling;
+				$subject[$subjectCount]["internals"] = ($childtd->nodeValue == 'A' ? 0:$childtd->nodeValue);
+				$childtd = $childtd->nextSibling;
+				$subject[$subjectCount]["total"] = ($childtd->nodeValue == 'A' ? 0:$childtd->nodeValue);
+				$childtd = $childtd->nextSibling;
+				$subject[$subjectCount]["result"] = $childtd->nodeValue;
 				
-				$subjectCount++;
-			}
-			
+				$subjectCount++;	
 		}
 		return $subject;
 	}
+	
+	function extractor($result){//Function to extract required data
+ 
+        $dom = new DOMDocument();
+        @$dom->loadHTML($result);
+        $allTd = $dom->getElementsByTagName("td");
+        for($i=0 ; $i< $allTd->length ; $i++){
+            $width = $allTd->item($i)->getAttribute("width");
+            if($width == "513")
+                break;
+        }
+
+        for($j=0 ; $j< $allTd->length ; $j++){
+            $width = $allTd->item($j)->getAttribute("width");
+            if($width == "250")
+                $td250 [] = $allTd->item ($j);
+        }
+		
+		$stuDetails = $this->extractBasicDetails($allTd->item($i));
+		$this->getTotal($td250[count($td250) -1], $stuDetails); //The total marks is scrapped sepraretely. Pass the last td.
+		$subjectDetails = $this->extractSubjects($td250);
+		$this->write_to_db($stuDetails, $subjectDetails);
+    }
 	
 	function write_to_db($stuDetails, $subjectDetails){
 		
@@ -123,40 +147,16 @@ class vtuleach{
 		
 	}
 	
-	function getTotal($table1) {
-		preg_match("/(\d+)/", $table1->nodeValue, $matches);
-		$total = $matches[1];
-		preg_match("/(...)(\d\d)(..)(\d\d\d)/", $this->usn, $bUSN);
-		$s_year = $bUSN[2];
-		$s_branch = $bUSN[3];
-		$s_roll = $bUSN[4];
-		$this->con->query("UPDATE student SET s_total = $total
-							WHERE s_coll='1bi' 
-							AND s_year=".$s_year."
-							AND s_branch='".$s_branch."'
-							AND s_roll=".$s_roll."") or die($this->con->error);
+	//We take the last td in from all subject tds and then move along the DOM tree to reach the 
+	//table with the result. The result table is always the next table after the table with the
+	// last set of results
+	function getTotal($td, &$stuDetails) {
+		$td = $td->parentNode; //Points to the <tr>
+		$td = $td->parentNode; //Points to the <table>
+		$table = $td->nextSibling->nextSibling->nextSibling; //Points to the skip two <br> and point to required table
+		preg_match("/(\d+)/", $table->nodeValue, $matches);
+		$stuDetails["total"] = $matches[1];
 	}
-            
-    function extractor($result){//Function to extract required data
-        $tableInResult = array(); //An array for all tables within a result column
-        $dom = new DOMDocument();
-        @$dom->loadHTML($result);
-        $allTd = $dom->getElementsByTagName("td");
-        for($i=0 ; $i< $allTd->length ; $i++){
-            $width = $allTd->item($i)->getAttribute("width");
-            if($width == "513")
-                break;
-        }
-		$strResult = $allTd->item($i)->C14N();
-        foreach($allTd->item($i)->childNodes as $cNode){
-            if($cNode->nodeName == "table"){
-                $tableInResult[] = $cNode;
-            }
-        }
-		$stuDetails = $this->extractBasicDetails($strResult,$tableInResult[2]);
-		$subjectDetails = $this->extractSubjects($tableInResult[1]);
-		$this->write_to_db($stuDetails, $subjectDetails);
-    }
     
     function getOneFromSite($usn){//Obtain the results of the student from results.vtu.ac.in, via a php5 post 
         $this->usn=$usn;
@@ -215,11 +215,20 @@ class vtuleach{
         }
         return $recordsLeached;
     }
-	
+
+	function getResForFail($year){
+		$res = $this->con->query("SELECT s_branch,s_roll FROM student WHERE s_res LIKE '%fail%' AND s_year=$year") or die($this->con->error);
+		while($row = $res->fetch_assoc()){
+			$row['s_roll'] = sprintf('%03d',$row['s_roll']);
+			$usn = '1bi'.$year.$row['s_branch'].$row['s_roll'];
+			echo $usn."<br>";
+			$this->getOneFromSite($usn);
+		}
+	}
 }
-echo "Accidential usage of the script alters the database. Uncomment the necessary line(s) if that was your intention.";
-//$temp = new vtuleach();
-//$temp->getOneFromSite("1bi11cv001");
-//$temp->beginLeach("1bi12te400", 40, 15);
+//echo "Accidential usage of the script alters the database. Uncomment the necessary line(s) if that was your intention.";
+$temp = new vtuleach();
+//$temp->getOneFromSite("1bi11cs112");
+//$temp->beginLeach("1bi11cs040", 200, 15);
 
 ?>
