@@ -26,7 +26,7 @@ $branchCodes=array(
 
 class vtuleach{
     private $usn;
-    private $extract=1; //1-> Calculate now 1, or Store then calulation for later 
+    private $extract=1; //1-> Calculate now 1, or Store then calculation for later 
     private $failCounter=5; //No of time there has been a re try in case of a connection failure to the remote server
 	
     private $con;
@@ -55,9 +55,9 @@ class vtuleach{
     function myProcess($result){//Decides what to do with the data
         $isAvailRes= stripos($result,"$this->usn");
         if($isAvailRes===false)
-            return 0;//If the result isnt available yet, say so
+            return 0;//If the result isn't available yet, say so
         else{
-            if($this->extract==1)//Immidiate calculation,then store
+            if($this->extract==1)//Immediate calculation,then store
                 $this->extractor($result,$this->usn);
             else
 			{
@@ -88,7 +88,7 @@ class vtuleach{
 		$subjectCount = 0;
 		foreach($td250s as $childtd)
 		{
-				if($childtd->nodeValue == "Subject") //This is the table headind which read "Subject Internals Ex.... Skip this row"
+				if($childtd->nodeValue == "Subject") //This is the table header which reads "Subject Internals Ex.... Skip this row"
 					continue;
 				preg_match("/(.*?)\((.*)\)/", $childtd->nodeValue, $matches); //Split subject name and code
 				$subject[$subjectCount]["subjectName"] = $matches[1];
@@ -125,7 +125,7 @@ class vtuleach{
         }
 		
 		$stuDetails = $this->extractBasicDetails($allTd->item($i));
-		$this->getTotal($td250[count($td250) -1], $stuDetails); //The total marks is scrapped sepraretely. Pass the last td.
+		$this->getTotal($td250[count($td250) -1], $stuDetails); //The total marks is scrapped separately. Pass the last td.
 		$subjectDetails = $this->extractSubjects($td250);
 		$this->write_to_db($stuDetails, $subjectDetails);
     }
@@ -195,7 +195,7 @@ class vtuleach{
     function beginLeach($startUSN,$qty=150,$nonExist=5){
         preg_match('/^(...)(....)(...)$/',$startUSN,$newUSN);
         $recordsLeached=0;//Total number of records leached by the function
-        $recordsWO=0;//consecutive number of recods without a result
+        $recordsWO=0;//consecutive number of records without a result
         echo "The following USN's have been written:<br>";
         for($i=1;$i<=$qty;$i++){
             $tempCounter=1;
@@ -226,7 +226,7 @@ class vtuleach{
 		}
 	}
 }
-//echo "Accidential usage of the script alters the database. Uncomment the necessary line(s) if that was your intention.";
+//echo "Accidental usage of the script alters the database. Uncomment the necessary line(s) if that was your intention.";
 $temp = new vtuleach();
 //$temp->getOneFromSite("1bi11cs112");
 //$temp->beginLeach("1bi11cs040", 200, 15);
