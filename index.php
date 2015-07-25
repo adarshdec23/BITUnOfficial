@@ -40,14 +40,14 @@
         </div> <!-- End of slideshow div -->'."\n";
             }
             $textToDisp=$row['content1'];
-			$textToDisp = str_replace("\n","</p><p class='para'>", $textToDisp);
+			$textToDisp = str_replace("\n","<br>", $textToDisp);
             $textToDisp=trim($textToDisp);
             if(strlen($textToDisp)>500){
-                $textToDisp="<p class='para'>".(substr(strip_tags($textToDisp,"<p>"),0,499))."......<a href='art/$id/$text_for_url'>Read More</a></p>";
+                $textToDisp="<p class='para'>".(substr($textToDisp,0,499))."......<a href='art/$id/$text_for_url'>Read More</a></p>";
             }
             else
-                $textToDisp="<p class='para'>".strip_tags($textToDisp,"<p>")."</p>";
-            echo "\t\t\t\t\t\t".$textToDisp."
+                $textToDisp="<p class='para'>".$textToDisp."</p>";
+            echo  "\t\t\t\t\t\t".$textToDisp."
     </div><!-- End of artHolder --> \n\n\t\t\t\t\t";
     }
 
