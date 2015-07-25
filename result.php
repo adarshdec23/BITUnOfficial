@@ -221,6 +221,7 @@ function oneResult($resObj){
 });
 </script>	";	
 	$temp = strtolower($stuDetails["s_res"]);
+	$temp = substr($temp, 2);
 	echo "<h3>Total:".$stuDetails["s_total"]." ".ucwords($temp)."</h3>";
 }
 
