@@ -395,7 +395,7 @@ function subjectResults($resObj) {
 							<td><a href='result.php?usn=$usn'>$s_name</a></td>
 							<td>".$row["internals"]."</td>
 							<td>".$row["externals"]."</td>
-							<td>".$row["s_total"]."</td>
+							<td>".$row["tot"]."</td>
 						</tr>";
 		$names.="'".$row["s_name"]."',";
 		$intMarks.=$row["internals"].",";
