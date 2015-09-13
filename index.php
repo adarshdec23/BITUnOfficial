@@ -58,7 +58,7 @@ if(isset($_GET['startID'])){
 	die();
 }
  if(!isset($_COOKIE['modal_chat1'])){
-	setcookie('modal_chat1', 1, time()+24*60*60, '/');
+	setcookie('modal_chat1', 1, time()+24*60*60*30, '/');
 	$showChatModal = TRUE;
 }
 /*function dispEr($toPrint,$ending=""){
